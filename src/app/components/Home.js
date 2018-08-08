@@ -35,6 +35,10 @@ export class Home extends React.Component {
         <div className="container">
           <h1 className="display-4">Home Component in Fluid jumbotron</h1>
           <p className="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+          <h5>
+            Alerte from parent component :
+            <button className="btn btn-danger" onClick={this.props.greet}>Greet</button>
+          </h5>
           <h4>Bootstrap Color Button & React Events:</h4>
             {colors.map((color, k) => (
               <button
@@ -59,5 +63,6 @@ export class Home extends React.Component {
 Home.propTypes = {
   colors: PropTypes.array,
   counter: PropTypes.number,
+  greet: PropTypes.func,
   children: PropTypes.element
 }

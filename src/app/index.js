@@ -12,6 +12,10 @@ import { Card } from './components/Card'
 import { CardUser } from './components/CardUser'
 
 class App extends Component {
+  onGreet(){
+    alert("Hello child!")
+  }
+
   render() {
     const colorBootstrap = ["primary", "secondary", "success", "danger", "warning", "info", "dark"]
     const users = [
@@ -43,7 +47,7 @@ class App extends Component {
         </div>
         <div className="row">
           <div className="col offset-xs-1">
-            <Home colors={colorBootstrap} initialCounter={0}>
+            <Home colors={colorBootstrap} initialCounter={0} greet={this.onGreet}>
               <p>Un paragraphe en <strong>props CHILDREN</strong></p>
             </Home>
           </div>
