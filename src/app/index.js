@@ -23,7 +23,7 @@ class App extends Component {
       },
       {
         name: "Tom",
-        hobbies: ["Chips", "Houlahoup"],
+        hobbies: ["Chips", "Oulaoupss"],
         age: 56,
         color: colorBootstrap[_.random(6)]
       },
@@ -43,7 +43,7 @@ class App extends Component {
         </div>
         <div className="row">
           <div className="col offset-xs-1">
-            <Home colors={colorBootstrap} >
+            <Home colors={colorBootstrap} initialCounter={0}>
               <p>Un paragraphe en <strong>props CHILDREN</strong></p>
             </Home>
           </div>
