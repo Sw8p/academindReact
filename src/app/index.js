@@ -12,8 +12,20 @@ import { Card } from './components/Card'
 import { CardUser } from './components/CardUser'
 
 class App extends Component {
+  constructor(props){
+    super()
+    this.state = {
+      linkName : "Home"
+    }
+  }
   onGreet(){
     alert("Hello child!")
+  }
+
+  onChangeLinkName(newName){
+    this.setState({
+      linkName : newName
+    })
   }
 
   render() {
@@ -42,12 +54,17 @@ class App extends Component {
       <div className="container">
         <div className="row">
           <div className="col offset-xs-1">
-            <Header />
+            <Header linkName={this.state.linkName}/>
           </div>
         </div>
         <div className="row">
           <div className="col offset-xs-1">
-            <Home colors={colorBootstrap} initialCounter={0} greet={this.onGreet}>
+            <Home
+              colors={colorBootstrap}
+              initialCounter={0}
+              greet={this.onGreet}
+              changeLink={this.onChangeLinkName.bind(this)}
+              >
               <p>Un paragraphe en <strong>props CHILDREN</strong></p>
             </Home>
           </div>

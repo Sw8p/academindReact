@@ -6,7 +6,8 @@ export class Home extends React.Component {
     super();
     this.state = {
       counter : props.initialCounter,
-      timer : 0
+      timer : 0,
+      linkName : "newName"
     }
     //execute Once after time
     //setTimeout(() => {
@@ -28,6 +29,10 @@ export class Home extends React.Component {
     })
   }
 
+  onChangeLink() {
+    this.props.changeLink(this.state.linkName)
+  }
+
   render () {
     const {colors} = this.props
     return (
@@ -38,6 +43,10 @@ export class Home extends React.Component {
           <h5>
             Alerte from parent component :
             <button className="btn btn-danger" onClick={this.props.greet}>Greet</button>
+          </h5>
+          <h5>
+            Passing data between parent & child components :
+            <button className="btn btn-warning" onClick={this.onChangeLink.bind(this)}>New Name</button>
           </h5>
           <h4>Bootstrap Color Button & React Events:</h4>
             {colors.map((color, k) => (
